@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Conduz</string>
+    <string name="logo">Conduz</string>
+    <string name="slogan">Prepara-se para conduzir</string>
+    <string name="iniciar">iniciar agora</string>
+    <string name="tenho_conta">Entrar com minha conta</string>
+    <string name="title_activity_login">Entrar</string>
+    <string name="nome_utilizador_hint">Nome de utilizador</string>
+    <string name="password_hint">Palavra-passe</string>
+
+    <string name="entrar">Entrar</string>
+    <string name="forgot_password">Esqueceu a palavra-passe?</string>
+    <string name="new_account">Criar uma conta</string>
+    <string name="enter_with">Entrar com:</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="title_activity_register">Registar</string>
+    <string name="action_settings">Settings</string>
+    <string name="full_name_hint">Nome completo</string>
+    <string name="password_repeat_hint">Repetir a palavra-passe</string>
+    <string name="register_hint">Criar uma conta</string>
+    <string name="title_activity_home">Conduz</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_nav">NavActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="conduz.rodrigues.joaor.co.mz.conduz.RegisterActivityFragment"
+    tools:showIn="@layout/activity_register">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:textCursorDrawable="@null"
+                android:background="@null"
+                android:padding="12dp"
+                android:hint="@string/full_name_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_full_name" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+            <EditText
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:padding="12dp"
+                android:hint="@string/nome_utilizador_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_username" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+            <EditText
+                android:textCursorDrawable="@null"
+                android:background="@null"
+                android:padding="12dp"
+                android:hint="@string/password_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/et_password" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+            <EditText
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:padding="12dp"
+                android:hint="@string/password_repeat_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/et_password_repeat" />
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_hint"
+            android:id="@+id/bt_register"
+            android:textColor="@color/white" />
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tenho_conta"
+                android:id="@+id/tv_have_account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_body" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_with"
+            android:id="@+id/enter_with"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_body" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:theme="@style/ColoredGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/google"
+                android:id="@+id/google"
+                android:textColor="@color/white" />
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:theme="@style/ColoredFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/facebook"
+                android:id="@+id/facebook"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
