@@ -1,13 +1,60 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".fragment.PraticaFragment">
+
+<LinearLayout
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="conduz.rodrigues.joaor.co.mz.conduz.PraticaFragment">
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Exames"
+        android:id="@+id/radioButton"
+        android:checked="true"
+        android:layout_weight="1"
+        android:clickable="false" />
+
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Exercícios"
+        android:id="@+id/radioButton2"
+        android:checked="false"
+        android:layout_weight="1" />
+</LinearLayout>
+
+<View
+    android:layout_width="match_parent"
+    android:background="@color/grey"
+    android:layout_height="1dp">
+
+</View>
+
+<android.support.v7.widget.RecyclerView
+    android:layout_marginTop="10dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:id="@+id/rv_pratica" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Exame Aleatório"
+        android:id="@+id/button3" />
+</LinearLayout>
 
-</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_sinal"
+    android:orientation="vertical"
+    android:layout_width="160dp"
+    android:layout_height="180dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/white_rectangle_no_radius"
+    android:gravity="bottom|center_horizontal">
+
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/sinal_transito_proibido"
+        android:id="@+id/iv_sinal_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Trânsito proibido"
+        android:textSize="@dimen/text_caption"
+        android:textColor="@color/body"
+        android:id="@+id/tv_sinal_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="E1"
+        android:textSize="@dimen/text_caption"
+        android:textColor="@color/caption"
+        android:id="@+id/tv_sinal_code" />
+</LinearLayout>

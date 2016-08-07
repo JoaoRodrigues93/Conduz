@@ -9,14 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-           <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -25,18 +25,61 @@
                 android:value="conduz.rodrigues.joaor.co.mz.conduz.MainActivity" />
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activity.RegisterActivity"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".LoginActivity"
+            android:parentActivityName=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="conduz.rodrigues.joaor.co.mz.conduz.LoginActivity" />
+                android:value=".activity.LoginActivity" />
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.LeituraActivity"
+            android:label="@string/title_activity_leitura"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.SinalDetailActivity"
+            android:label="@string/title_activity_sinal_detail"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ExercicioActivity"
+            android:label="@string/title_activity_exercicio"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ArticleChooser"
+            android:label="@string/title_activity_article_chooser"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="conduz.rodrigues.joaor.co.mz.conduz.activity.HomeActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

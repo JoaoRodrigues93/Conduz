@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="50dp"
+    tools:context=".fragment.SinalDetailFragment"
+    android:gravity="center_horizontal">
+
+
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sinal_sentido_proibido"
+        android:id="@+id/iv_sinal_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E1"
+        android:textSize="@dimen/text_caption"
+        android:textColor="@color/caption"
+        android:id="@+id/tv_sinal_code" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sentido proibido. Indicação de transitar no sentido contrário para o qual o sinal está orientado."
+        android:id="@+id/tv_sinal_description"
+        android:textSize="@dimen/text_body"
+        android:textColor="@color/body"
+        />
+</LinearLayout>

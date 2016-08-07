@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_title"
+        android:textColor="@color/title"
+        android:text="Princípios Gerais"
+
+        android:id="@+id/tv_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artigo 29"
+        android:textSize="@dimen/text_caption"
+        android:textColor="@color/caption"
+        android:id="@+id/tv_article_number"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_body"
+        android:textColor="@color/body"
+        android:text="1. Os condutores devem regular a velocidade dos veículos de modo que, atendendo às caracteristicas destes, às condições da via, ao estado físico e psicológico do condutor, à intensidade do trânsito e a quasquer outras circunstâncias especiais, não haja perigo para a segurança das pessoas e das coisas nem perturbação ou entrave para o trânsito.
+2. Salvo em caso de perigo eminente, o condutor não deve diminuir subitamente a velocidade do veículo sem previamente se certificar de que daí não resulta perigo, para os outros utentes da via, nomeadamente, para os condutores dos veículos que o sigam."
+        android:id="@+id/tv_article_content" />
+</LinearLayout>

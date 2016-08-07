@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "conduz.rodrigues.joaor.co.mz.conduz"
+        applicationId "conduz.rodrigues.joao.co.mz.conduz"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
