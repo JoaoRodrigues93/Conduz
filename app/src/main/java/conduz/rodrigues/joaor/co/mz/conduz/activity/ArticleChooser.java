@@ -4,6 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -19,7 +21,16 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.adapter.ArticleChooserAdapter;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Seccao;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Subtitulo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Titulo;
 
 public class ArticleChooser extends AppCompatActivity {
 
@@ -94,9 +105,25 @@ public class ArticleChooser extends AppCompatActivity {
          * The fragment argument representing the section number for this
          * fragment.
          */
+
+        private List<Titulo> titulo;
+        private List<Subtitulo> capitulo;
+        private List<Seccao> seccao;
+        private List mDataset;
+
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         public PlaceholderFragment() {
+            titulo = new ArrayList<>();
+            capitulo = new ArrayList<>();
+            seccao = new ArrayList<>();
+
+            SampleModel sampleModel = new SampleModel();
+
+            titulo = sampleModel.SampleTitulo();
+            capitulo = sampleModel.SampleSubtitulo();
+            seccao = sampleModel.SampleSeccao();
+
         }
 
         /**
@@ -107,6 +134,7 @@ public class ArticleChooser extends AppCompatActivity {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+
             fragment.setArguments(args);
             return fragment;
         }
@@ -115,8 +143,27 @@ public class ArticleChooser extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_article_chooser, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            RecyclerView article_title_list = (RecyclerView) rootView.findViewById(R.id.article_chooser);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
+            String type = null;
+            int sectioNumber = getArguments().getInt(ARG_SECTION_NUMBER);
+
+            if (sectioNumber == 1) {
+                mDataset = titulo;
+                type = "titulo";
+            }
+            else if (sectioNumber==2) {
+                mDataset = capitulo;
+                type = "capitulo";
+            }
+            else if(sectioNumber==3) {
+                mDataset = seccao;
+                type = "seccao";
+            }
+            ArticleChooserAdapter articleChooserAdapter = new ArticleChooserAdapter(mDataset,type);
+            article_title_list.setLayoutManager(layoutManager);
+            article_title_list.setAdapter(articleChooserAdapter);
+
             return rootView;
         }
     }
@@ -148,11 +195,11 @@ public class ArticleChooser extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "TÍTULO";
                 case 1:
-                    return "SECTION 2";
+                    return "CAPÍTULO";
                 case 2:
-                    return "SECTION 3";
+                    return "SECÇÃO";
             }
             return null;
         }

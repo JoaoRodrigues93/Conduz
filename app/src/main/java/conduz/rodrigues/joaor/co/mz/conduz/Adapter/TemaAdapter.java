@@ -17,15 +17,15 @@ import java.util.List;
 
 import conduz.rodrigues.joaor.co.mz.conduz.activity.LeituraActivity;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Tema;
 
 /**
  * Created by João Rodrigues on 6/19/2016.
  */
 public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
 
-    private List<String> mDataset;
+    private List<Tema> mDataset;
     private int mColor;
-    private int [] imageResources;
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder  {
@@ -45,14 +45,13 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
         }
     }
 
-    public TemaAdapter(List<String> myDataset) {
+    public TemaAdapter(List<Tema> myDataset) {
         mDataset = myDataset;
     }
 
-    public TemaAdapter(List<String> myDataset,int color,int [] images) {
+    public TemaAdapter(List<Tema> myDataset,int color) {
         mDataset = myDataset;
         mColor = color;
-        imageResources = images;
     }
 
     @Override
@@ -64,18 +63,19 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        holder.title.setText(mDataset.get(position));
+        final Tema tema = mDataset.get(position);
+        holder.title.setText(tema.getNome());
         changeBackground(holder.temaIconLayout);
-        holder.temaIcon.setImageResource(imageResources[position]);
+        holder.temaIcon.setImageResource(tema.getIconeResource());
         holder.temaLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),LeituraActivity.class);
-                intent.putExtra(LeituraActivity.TITLE,mDataset.get(position));
+                intent.putExtra(LeituraActivity.TITLE,tema.getNome());
                 intent.putExtra(LeituraActivity.COLOR,mColor);
                 intent.putExtra(LeituraActivity.SUBTITLE,"Capítulo");
-                intent.putExtra(LeituraActivity.IMAGE_RESOURCE,imageResources[position]);
-                intent.putExtra(LeituraActivity.CONTENT,"");
+                intent.putExtra(LeituraActivity.IMAGE_RESOURCE,tema.getIconeResource());
+                intent.putExtra(LeituraActivity.CONTENT,tema.getConteudo());
                 view.getContext().startActivity(intent);
             }
         });

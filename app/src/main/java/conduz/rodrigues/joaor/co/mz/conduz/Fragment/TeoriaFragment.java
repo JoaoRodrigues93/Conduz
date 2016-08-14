@@ -14,6 +14,8 @@ import java.util.List;
 
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.TeoriaAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 
 
 /**
@@ -34,7 +36,7 @@ public class TeoriaFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List<String> dataSet;
+    private List<Capitulo> dataSet;
     private int [] colors;
 
 
@@ -77,7 +79,6 @@ public class TeoriaFragment extends Fragment {
         View teoriaView = inflater.inflate(R.layout.fragment_teoria, container, false);
 
         mRecyclerView = (RecyclerView) teoriaView.findViewById(R.id.rv_teoria);
-        dataSet = new ArrayList<String>();
         mLayoutManager = new LinearLayoutManager(teoriaView.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         colors = getResources().getIntArray(R.array.material_color);
@@ -90,9 +91,13 @@ public class TeoriaFragment extends Fragment {
     }
 
     private void fetchDataset (){
-        dataSet.add("Sistema de Circulação Rodoviária");
+        /*dataSet.add("Sistema de Circulação Rodoviária");
         dataSet.add("Classificação das vias");
-        dataSet.add("Sinalização do Trânsito");
+        dataSet.add("Sinalização do Trânsito");*/
+
+        SampleModel sampleModel = new SampleModel();
+
+        dataSet = sampleModel.SampleCapitulo();
     }
 
 }
