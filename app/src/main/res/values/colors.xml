@@ -12,6 +12,7 @@
     <color name="grey_transparent">#000000</color>
     <color name="soft_black">#757575</color>
     <color name="soft_grey">#E0E0E0</color>
+    <color name="option_choosen">#9FA8DA</color>
 
     <!-- Material Colors -->
     <array name="material_color">

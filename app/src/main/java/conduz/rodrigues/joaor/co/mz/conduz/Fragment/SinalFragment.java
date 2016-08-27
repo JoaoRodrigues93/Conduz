@@ -1,6 +1,7 @@
 package conduz.rodrigues.joaor.co.mz.conduz.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -8,12 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import conduz.rodrigues.joaor.co.mz.conduz.Utility;
+import conduz.rodrigues.joaor.co.mz.conduz.activity.SinalChooser;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.SinalAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Sinal;
 
 
 /**
@@ -22,38 +27,35 @@ import conduz.rodrigues.joaor.co.mz.conduz.R;
  * create an instance of this fragment.
  */
 public class SinalFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private RecyclerView sinalList;
-    private List<String> mDataset;
+    private List<Sinal> dataset;
     private SinalAdapter sinalAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private Button sinalChapter;
+    private Button sinalSection;
+    private Button.OnClickListener chapterClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            chapterClick();
+        }
+    };
+
+    private Button.OnClickListener sectionClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            sectionClick();
+        }
+    };
 
     public SinalFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SinalFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static SinalFragment newInstance(String param1, String param2) {
         SinalFragment fragment = new SinalFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -61,10 +63,6 @@ public class SinalFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -72,21 +70,43 @@ public class SinalFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sinal, container, false);
-        mLayoutManager = new GridLayoutManager(view.getContext(),2);
+        sinalChapter = (Button) view.findViewById(R.id.bt_sinal_chapter);
+        sinalSection = (Button) view.findViewById(R.id.bt_sinal_section);
+        sinalChapter.setOnClickListener(chapterClickListener);
+        sinalSection.setOnClickListener(sectionClickListener);
+
+        if(SinalChooser.capitulo!=null)
+            sinalChapter.setText(SinalChooser.capitulo);
+        if(SinalChooser.seccao!=null)
+            sinalSection.setText(SinalChooser.seccao);
+
+        int noColumns = Utility.calculateNoOfColumns(getContext(),130);
+        mLayoutManager = new GridLayoutManager(view.getContext(),noColumns);
         sinalList = (RecyclerView) view.findViewById(R.id.rv_sinais);
         sinalList.setLayoutManager(mLayoutManager);
-        mDataset = new ArrayList<String>();
-        mDataset.add("Item1");
-        mDataset.add("item2");
-        mDataset.add("item3");
-        mDataset.add("item4");
-        mDataset.add("Item5");
-        mDataset.add("item6");
-        mDataset.add("item7");
-        mDataset.add("item8");
-        sinalAdapter = new SinalAdapter(mDataset);
+        SampleModel sampleModel = new SampleModel();
+        dataset = sampleModel.SampleSinal();
+        sinalAdapter = new SinalAdapter(dataset);
         sinalList.setAdapter(sinalAdapter);
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(SinalChooser.capitulo!=null)
+            sinalChapter.setText(SinalChooser.capitulo);
+        if(SinalChooser.seccao!=null)
+            sinalSection.setText(SinalChooser.seccao);
+    }
+
+    private void chapterClick(){
+        Intent intent = new Intent(getContext(), SinalChooser.class);
+        startActivity(intent);
+    }
+
+    private void sectionClick (){
+        Intent intent = new Intent(getContext(), SinalChooser.class);
+        startActivity(intent);
+    }
 }

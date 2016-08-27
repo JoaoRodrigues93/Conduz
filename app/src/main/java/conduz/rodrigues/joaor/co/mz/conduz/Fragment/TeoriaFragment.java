@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import conduz.rodrigues.joaor.co.mz.conduz.adapter.SimpleAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.TeoriaAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
@@ -77,23 +78,24 @@ public class TeoriaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View teoriaView = inflater.inflate(R.layout.fragment_teoria, container, false);
+        /*List<String> dataset = new ArrayList<String>();
+        for (int i = 0; i <50 ; i++) {
+            dataset.add("Simple Text Item "+(i));
+        }*/
 
         mRecyclerView = (RecyclerView) teoriaView.findViewById(R.id.rv_teoria);
         mLayoutManager = new LinearLayoutManager(teoriaView.getContext());
+//        SimpleAdapter simpleAdapter = new SimpleAdapter(dataset);
         mRecyclerView.setLayoutManager(mLayoutManager);
         colors = getResources().getIntArray(R.array.material_color);
         fetchDataset();
         mAdapter = new TeoriaAdapter(dataSet,colors);
         mRecyclerView.setAdapter(mAdapter);
 
-
         return teoriaView;
     }
 
     private void fetchDataset (){
-        /*dataSet.add("Sistema de Circulação Rodoviária");
-        dataSet.add("Classificação das vias");
-        dataSet.add("Sinalização do Trânsito");*/
 
         SampleModel sampleModel = new SampleModel();
 

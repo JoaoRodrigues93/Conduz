@@ -13,16 +13,17 @@ import java.util.List;
 
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.activity.SinalDetailActivity;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Sinal;
 
 /**
  * Created by João Rodrigues on 7/7/2016.
  */
 public class SinalAdapter extends RecyclerView.Adapter<SinalAdapter.ViewHolder> {
 
-    List mDataset;
+    List<Sinal> dataset;
 
-    public SinalAdapter (List myDataset){
-        mDataset = myDataset;
+    public SinalAdapter (List<Sinal> dataset){
+        this.dataset = dataset;
     }
 
 
@@ -36,7 +37,10 @@ public class SinalAdapter extends RecyclerView.Adapter<SinalAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        Sinal sinal = dataset.get(position);
+        holder.sinalCode.setText(sinal.getCodigo());
+        holder.sinalImage.setImageResource(sinal.getIconeResource());
+        holder.sinalTitle.setText(sinal.getNome());
 
         holder.sinalLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +53,7 @@ public class SinalAdapter extends RecyclerView.Adapter<SinalAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return dataset.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

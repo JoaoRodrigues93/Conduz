@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:background="@color/white"
+    >
 <TextView
     android:layout_gravity="start"
     android:layout_width="wrap_content"
@@ -14,9 +16,14 @@
     android:id="@+id/tv_chapter_title"
     />
     <android.support.v7.widget.RecyclerView
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rv_themes_view"
         />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_themes_view" />
 
 </LinearLayout>

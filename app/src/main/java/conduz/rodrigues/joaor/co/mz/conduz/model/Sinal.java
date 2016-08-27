@@ -9,7 +9,7 @@ public class Sinal {
     private String codigo;
     private String descricao;
     private String icone;
-    private String iconeResource;
+    private int iconeResource;
 
     public Sinal() {
     }
@@ -54,11 +54,11 @@ public class Sinal {
         this.descricao = descricao;
     }
 
-    public String getIconeResource() {
+    public int getIconeResource() {
         return iconeResource;
     }
 
-    public void setIconeResource(String iconeResource) {
+    public void setIconeResource(int iconeResource) {
         this.iconeResource = iconeResource;
     }
 }

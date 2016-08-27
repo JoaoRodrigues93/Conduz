@@ -122,5 +122,7 @@
     <string name="title_activity_sinal_detail">SinalDetail</string>
     <string name="title_activity_exercicio">Exercicio</string>
     <string name="exercise_button">Exercício</string>
-    <string name="title_activity_article_chooser">Código de Estrada</string>
+    <string name="title_activity_article_chooser">Escolher</string>
+    <string name="title_activity_sinal_chooser">Escolher</string>
+    <string name="title_activity_exame">Exame</string>
 </resources>

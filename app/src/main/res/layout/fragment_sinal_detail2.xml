@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="50dp"
+    android:background="@color/white"
     tools:context=".fragment.SinalDetailFragment"
     android:gravity="center_horizontal">
 

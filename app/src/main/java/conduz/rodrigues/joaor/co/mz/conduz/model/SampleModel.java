@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 /**
@@ -16,8 +17,8 @@ public class SampleModel {
     public SampleModel() {
     }
 
-    private List<Integer> imageResources (){
-        List<Integer> imageResources = new ArrayList<Integer>();
+    private LinkedList<Integer> imageResources (){
+        LinkedList<Integer> imageResources = new LinkedList<>();
         imageResources.add(R.drawable.sample_1);
         imageResources.add(R.drawable.sample_2);
         imageResources.add(R.drawable.sample_3);
@@ -37,15 +38,30 @@ public class SampleModel {
         return imageResources;
     }
 
-    private List<Integer> iconeResources (){
-        List<Integer> iconeResources = new ArrayList<Integer>();
+    private LinkedList<Integer> iconeResources (){
+        LinkedList<Integer> iconeResources = new LinkedList<>();
 
-        iconeResources.add(R.drawable.sinal_proibido_a_motociclos);
-        iconeResources.add(R.drawable.sinal_proibido_de_exceder);
-        iconeResources.add(R.drawable.sinal_proibido_peoes);
-        iconeResources.add(R.drawable.sinal_proibido_ultrapassar);
-        iconeResources.add(R.drawable.sinal_sentido_proibido);
-        iconeResources.add(R.drawable.sinal_transito_proibido);
+        iconeResources.add(R.drawable.a1);
+        iconeResources.add(R.drawable.a2);
+        iconeResources.add(R.drawable.a3);
+        iconeResources.add(R.drawable.a4);
+        iconeResources.add(R.drawable.a5);
+        iconeResources.add(R.drawable.a6);
+        iconeResources.add(R.drawable.a7);
+        iconeResources.add(R.drawable.a8);
+        iconeResources.add(R.drawable.a9);
+        iconeResources.add(R.drawable.a10);
+        iconeResources.add(R.drawable.a11);
+        iconeResources.add(R.drawable.a12);
+        iconeResources.add(R.drawable.a13);
+        iconeResources.add(R.drawable.a14);
+        iconeResources.add(R.drawable.a15);
+        iconeResources.add(R.drawable.a16);
+        iconeResources.add(R.drawable.a17);
+        iconeResources.add(R.drawable.a18);
+        iconeResources.add(R.drawable.a19);
+        iconeResources.add(R.drawable.a20);
+
 
         return  iconeResources;
     }
@@ -77,7 +93,50 @@ public class SampleModel {
         String titulo;
         String conteudo;
 
-        return null;
+        Artigo artigo;
+        List<Artigo> artigos = new ArrayList<Artigo>();
+
+        for (int i = 0; i < 15 ; i++) {
+            id = (i+1);
+            numero = (i+1);
+            titulo = "Título "+(i+1);
+            conteudo = "Aqui vai aparecer o conteúdo do artigo. "+(i+1);
+            artigo = new Artigo();
+            artigo.setId(id);
+            artigo.setNumero(numero);
+            artigo.setTitulo(titulo);
+            artigo.setConteudo(conteudo);
+
+            artigos.add(artigo);
+        }
+
+        return artigos;
+    }
+
+    public  List<Artigo> SampleArtigo (int cont){
+        int id;
+        int numero;
+        String titulo;
+        String conteudo;
+
+        Artigo artigo;
+        List<Artigo> artigos = new ArrayList<Artigo>();
+
+        for (int i = 0; i < 15 ; i++) {
+            id = (i+1);
+            numero = (i+1+cont);
+            titulo = "Título "+(i+1+cont);
+            conteudo = "Aqui vai aparecer o conteúdo do artigo. "+(i+1+cont);
+            artigo = new Artigo();
+            artigo.setId(id);
+            artigo.setNumero(numero);
+            artigo.setTitulo(titulo);
+            artigo.setConteudo(conteudo);
+
+            artigos.add(artigo);
+        }
+
+        return artigos;
     }
 
     public List<ExameDoInatter> SampleExame (){
@@ -100,8 +159,24 @@ public class SampleModel {
         String nome;
         int ordemDoQuadro;
         String descricao;
+        List<Quadro> quadros = new ArrayList<>();
+        Quadro quadro;
 
-        return null;
+        for (int i = 0; i < 10; i++) {
+          quadro = new Quadro();
+          id=(i+1);
+          nome = "Quadro "+(i+1);
+          ordemDoQuadro = i;
+          descricao = "Descrição"+(i+1);
+          quadro.setId(id);
+          quadro.setNome(nome);
+          quadro.setDescricao(descricao);
+          quadro.setOrdemDoQuadro(ordemDoQuadro);
+
+          quadros.add(quadro);
+        }
+
+        return quadros;
     }
 
     public List<Questao> SampleQuestao (){
@@ -157,8 +232,31 @@ public class SampleModel {
          int id;
          String nome;
          String descricao;
-         int ordemDaSeccao;
-        return null;
+         String codigo;
+         int iconeResource;
+        List<Sinal> sinais = new ArrayList<Sinal>();
+        Sinal sinal;
+        LinkedList<Integer> iconeResources = iconeResources();
+
+        for (int i = 0; i < 10 ; i++) {
+            sinal = new Sinal();
+            id = (i+1);
+            nome = "Sinal "+(i+1);
+            descricao = "Está será uma descrição do sinal. "+(i+1);
+            codigo = "A"+(i+1);
+            iconeResource = iconeResources.pop();
+            iconeResources.addLast(iconeResource);
+
+            sinal.setId(id);
+            sinal.setCodigo(codigo);
+            sinal.setDescricao(descricao);
+            sinal.setIconeResource(iconeResource);
+            sinal.setNome(nome);
+
+            sinais.add(sinal);
+        }
+
+        return sinais;
     }
 
     public List<Subseccao> SampleSubseccao (){
@@ -335,4 +433,27 @@ public class SampleModel {
 
         return titulos;
     }
+
+    public List<CapituloSinal> SampleCapituloSinal (){
+        int id;
+        String nome;
+        String descricao;
+        int ordemDoCapitulo;
+        CapituloSinal capitulo;
+
+        List<CapituloSinal> capitulos = new ArrayList<CapituloSinal>();
+
+        for (int i = 1; i <= 10; i++) {
+            capitulo = new CapituloSinal();
+            capitulo.setId(i);
+            capitulo.setNome("Capítulo "+i);
+            capitulo.setDescricao("Descrição "+i);
+            capitulo.setOrdemDoCapitulo(i);
+            capitulos.add(capitulo);
+        }
+
+        return capitulos;
+    }
+
+
 }

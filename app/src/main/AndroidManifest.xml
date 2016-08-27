@@ -56,20 +56,10 @@
                 android:value=".activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activity.ExercicioActivity"
-            android:label="@string/title_activity_exercicio"
-            android:parentActivityName=".activity.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.HomeActivity" />
-        </activity>
-        <activity
             android:name=".activity.ArticleChooser"
             android:label="@string/title_activity_article_chooser"
             android:parentActivityName=".activity.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="conduz.rodrigues.joaor.co.mz.conduz.activity.HomeActivity" />
@@ -79,6 +69,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SinalChooser"
+            android:label="@string/title_activity_sinal_chooser"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="conduz.rodrigues.joaor.co.mz.conduz.activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ExercicioActivity"
+            android:label="@string/title_activity_exame"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="conduz.rodrigues.joaor.co.mz.conduz.activity.HomeActivity" />
         </activity>
     </application>
 

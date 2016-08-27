@@ -1,8 +1,6 @@
 package conduz.rodrigues.joaor.co.mz.conduz.activity;
 
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,14 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import conduz.rodrigues.joaor.co.mz.conduz.ClickListener;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.RecyclerTouchListener;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.ArticleChooserAdapter;
-import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Seccao;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Subtitulo;
@@ -43,6 +41,13 @@ public class ArticleChooser extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    public static int tituloId = 1;
+    public static int subtituloId = 1;
+    public static int seccaoId = 1;
+    public static String titulo;
+    public static String subtitulo;
+    public static String seccao;
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -110,6 +115,7 @@ public class ArticleChooser extends AppCompatActivity {
         private List<Subtitulo> capitulo;
         private List<Seccao> seccao;
         private List mDataset;
+        private static ViewPager mViewPager;
 
         private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -130,11 +136,11 @@ public class ArticleChooser extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
+        public static PlaceholderFragment newInstance(int sectionNumber,ViewPager viewPager) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-
+            mViewPager = viewPager;
             fragment.setArguments(args);
             return fragment;
         }
@@ -146,7 +152,7 @@ public class ArticleChooser extends AppCompatActivity {
             RecyclerView article_title_list = (RecyclerView) rootView.findViewById(R.id.article_chooser);
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
             String type = null;
-            int sectioNumber = getArguments().getInt(ARG_SECTION_NUMBER);
+            final int sectioNumber = getArguments().getInt(ARG_SECTION_NUMBER);
 
             if (sectioNumber == 1) {
                 mDataset = titulo;
@@ -161,8 +167,35 @@ public class ArticleChooser extends AppCompatActivity {
                 type = "seccao";
             }
             ArticleChooserAdapter articleChooserAdapter = new ArticleChooserAdapter(mDataset,type);
+            articleChooserAdapter.setMainViewPager(mViewPager);
             article_title_list.setLayoutManager(layoutManager);
             article_title_list.setAdapter(articleChooserAdapter);
+            final String finalType = type;
+            article_title_list.addOnItemTouchListener(new RecyclerTouchListener(getContext(), article_title_list, new ClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    if (finalType == "titulo")
+                    {
+                       ArticleChooser.tituloId = titulo.get(position).getId();
+                       ArticleChooser.titulo  = titulo.get(position).getNome();
+                    }
+                    else if(finalType =="capitulo")
+                    {
+                        ArticleChooser.subtituloId =  capitulo.get(position).getId();
+                        ArticleChooser.subtitulo = capitulo.get(position).getNome();
+                    }
+                    else if (finalType == "seccao")
+                    {
+                        ArticleChooser.seccaoId = seccao.get(position).getId();
+                        ArticleChooser.seccao = seccao.get(position).getNome();
+                    }
+                }
+
+                @Override
+                public void onLongClick(View view, int position) {
+
+                }
+            }));
 
             return rootView;
         }
@@ -182,7 +215,7 @@ public class ArticleChooser extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            return PlaceholderFragment.newInstance(position + 1,mViewPager);
         }
 
         @Override

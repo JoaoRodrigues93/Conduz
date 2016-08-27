@@ -3,6 +3,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
+ android:background="@color/white"
 tools:context=".fragment.PraticaFragment">
 
 <LinearLayout
@@ -18,7 +19,7 @@ tools:context=".fragment.PraticaFragment">
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Exames"
-        android:id="@+id/radioButton"
+        android:id="@+id/rb_exames"
         android:checked="true"
         android:layout_weight="1"
         android:clickable="false" />
@@ -27,7 +28,7 @@ tools:context=".fragment.PraticaFragment">
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Exercícios"
-        android:id="@+id/radioButton2"
+        android:id="@+id/rb_exercicios"
         android:checked="false"
         android:layout_weight="1" />
 </LinearLayout>

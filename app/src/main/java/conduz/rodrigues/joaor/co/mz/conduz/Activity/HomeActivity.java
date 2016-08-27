@@ -1,5 +1,6 @@
 package conduz.rodrigues.joaor.co.mz.conduz.activity;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -19,9 +20,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.SectionsPagerAdapter;
+import conduz.rodrigues.joaor.co.mz.conduz.fragment.CodigoFragment;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -34,7 +37,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
+    public static final String PREFERED_GROUP = "prefered_group";
+    public static final String CHANGE_TAB = "change_tab";
+    private String preferedSection;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -67,6 +72,22 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        Intent intent = getIntent();
+
+        boolean changeTab = intent.getBooleanExtra(CHANGE_TAB,false);
+        preferedSection = getIntent().getStringExtra(PREFERED_GROUP);
+
+        if(changeTab){
+            if(preferedSection.equalsIgnoreCase("codigo")){
+                mViewPager.setCurrentItem(1);
+            }
+
+            else if(preferedSection.equalsIgnoreCase("sinais"))
+                mViewPager.setCurrentItem(2);
+            else if(preferedSection.equalsIgnoreCase("pratica"))
+                mViewPager.setCurrentItem(3);
+        }
     }
 
 
@@ -90,6 +111,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     /**
