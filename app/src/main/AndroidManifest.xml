@@ -88,6 +88,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="conduz.rodrigues.joaor.co.mz.conduz.activity.HomeActivity" />
         </activity>
+        <activity
+            android:name=".activity.ExameActivity"
+            android:label="@string/title_activity_exame"
+            android:parentActivityName=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="conduz.rodrigues.joaor.co.mz.conduz.activity.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import conduz.rodrigues.joaor.co.mz.conduz.R;
-import conduz.rodrigues.joaor.co.mz.conduz.activity.ExercicioActivity;
+import conduz.rodrigues.joaor.co.mz.conduz.activity.ExameActivity;
 
 /**
  * Created by João Rodrigues on 7/7/2016.
@@ -52,7 +52,7 @@ public class ExameAdapter extends RecyclerView.Adapter<ExameAdapter.ViewHolder> 
     }
 
     private void openExame (View view){
-        Intent intent = new Intent(view.getContext(), ExercicioActivity.class);
+        Intent intent = new Intent(view.getContext(), ExameActivity.class);
         view.getContext().startActivity(intent);
     }
 
