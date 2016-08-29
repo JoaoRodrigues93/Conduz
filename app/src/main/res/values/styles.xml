@@ -25,4 +25,20 @@
         <item name="colorButtonNormal">@color/facebook</item>
     </style>
 
+    <style name="ColoredChoosenQuestion" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/choosen_question</item>
+    </style>
+
+    <style name="ColoredAnswereQuestion" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/answered_question</item>
+    </style>
+
+    <style name="ColoredCorrectAnswered" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/correct_answered</item>
+    </style>
+
+    <style name="ColoredWrongAnswered" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/wrong_answered</item>
+    </style>
+
 </resources>

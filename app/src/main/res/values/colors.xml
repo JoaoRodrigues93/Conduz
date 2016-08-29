@@ -41,4 +41,8 @@
     <color name="menu">#212121</color>
     <color name="button">#212121</color>
     <color name="headline">#212121</color>
+    <color name="choosen_question">#3F51B5</color>
+    <color name="answered_question">#B2FF59</color>
+    <color name="wrong_answered">#FF5252</color>
+    <color name="correct_answered">#64FFDA</color>
 </resources>

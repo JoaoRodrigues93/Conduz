@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -39,12 +40,12 @@ public class QuestionNumberAdapter extends RecyclerView.Adapter<QuestionNumberAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView questionNumber;
+        public Button questionNumber;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            questionNumber = (TextView) itemView.findViewById(R.id.tv_question_number);
+            questionNumber = (Button) itemView.findViewById(R.id.tv_question_number);
         }
     }
 }
