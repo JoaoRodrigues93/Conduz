@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,8 @@ public class CodigoFragment extends Fragment {
     private String titulo;
     private String subtitulo;
     private String seccao;
+
+    private ArtigoAdapter artigoAdapter;
 
     private List<Titulo> titulos;
     private List<Subtitulo> subtitulos;
@@ -161,9 +164,9 @@ public class CodigoFragment extends Fragment {
         //SampleModel sampleModel = new SampleModel();
        // mDataset = sampleModel.SampleArtigo(Integer.valueOf(""+subtituloId+""+seccaoId));
 
-        ArtigoAdapter artigoAdapter = new ArtigoAdapter(mDataset);
+        artigoAdapter = new ArtigoAdapter(mDataset);
         artigoList.setAdapter(artigoAdapter);
-
+        //Toast.makeText(getActivity(), "TituloId "+ArticleChooser.tituloId+" CapituloId "+ArticleChooser.subtituloId+" SeccaoId "+ArticleChooser.seccaoId, Toast.LENGTH_SHORT).show();
         return view;
     }
 
@@ -175,5 +178,15 @@ public class CodigoFragment extends Fragment {
     private void showThemeChooserDialog() {
         Intent intent = new Intent(getContext(), ArticleChooser.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        ModelFactory modelFactory = new ModelFactory(getContext());
+//        mDataset = modelFactory.SampleArtigo(ArticleChooser.seccaoId,ArticleChooser.subtituloId,ArticleChooser.tituloId);
+//        artigoAdapter.setmDataset(mDataset);
+//        artigoAdapter.notifyDataSetChanged();
+
     }
 }

@@ -27,6 +27,7 @@ import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.RecyclerTouchListener;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.QuestionNumberAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.fragment.ExercicioActivityFragment;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Questao;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 
@@ -71,8 +72,8 @@ public class ExameActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         dataset = new ArrayList<>();
         choosenOption = new ArrayList<>();
-        valuesOfChoosenOptions = new ArrayList<String>(25);
-        questoes = new SampleModel().SampleQuestao();
+        valuesOfChoosenOptions = new ArrayList<String>(10);
+        questoes = new ModelFactory(getApplicationContext()).SampleQuestao();
         fillDataset();
 
         adapter = new QuestionNumberAdapter(dataset);
@@ -126,7 +127,7 @@ public class ExameActivity extends AppCompatActivity {
     }
 
     private void fillDataset (){
-        for (int i = 0; i <25 ; i++) {
+        for (int i = 0; i <10 ; i++) {
             dataset.add(""+(i+1));
             choosenOption.add(-1);
             valuesOfChoosenOptions.add("");
@@ -195,7 +196,7 @@ public class ExameActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 25;
+            return 10;
         }
 
         @Override
@@ -247,7 +248,7 @@ public class ExameActivity extends AppCompatActivity {
         String answer;
         Questao questao;
         int correctAnswers=0;
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 10; i++) {
             answer = valuesOfChoosenOptions.get(i);
             questao = questoes.get(i);
             if(questao.getOpcaoCorrecta().equalsIgnoreCase(answer))

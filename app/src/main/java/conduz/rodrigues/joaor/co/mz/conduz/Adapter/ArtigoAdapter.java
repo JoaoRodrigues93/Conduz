@@ -22,6 +22,9 @@ public class ArtigoAdapter extends RecyclerView.Adapter<ArtigoAdapter.ViewHolder
         mDataset = myDataset;
     }
 
+    public void setmDataset(List<Artigo> mDataset) {
+        this.mDataset = mDataset;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

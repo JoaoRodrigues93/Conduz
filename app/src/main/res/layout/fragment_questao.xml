@@ -14,8 +14,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_height="150dp"
         android:paddingBottom="3dp"
         android:paddingTop="3dp"
         android:background="@drawable/rectangle_primary_no_radius"
@@ -25,15 +24,15 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
             android:textSize="@dimen/text_body"
             android:textColor="@color/body"
             android:text="Qual a velocidade máxima permitida dentro das localidades?"
@@ -43,10 +42,10 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:id="@+id/ll_resposta_1"
-            >
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:layout_width="30dp"
@@ -63,7 +62,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/body"
                 android:text="70 km/h"
-                android:id="@+id/tv_resposta_1" />
+                android:id="@+id/tv_resposta_1"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,8 +72,9 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:layout_width="30dp"
@@ -89,7 +91,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/body"
                 android:text="50 km/h"
-                android:id="@+id/tv_resposta_2" />
+                android:id="@+id/tv_resposta_2"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,9 +101,9 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:gravity="bottom">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:layout_width="30dp"
@@ -116,7 +120,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/body"
                 android:text="60 km/h"
-                android:id="@+id/tv_resposta_3" />
+                android:id="@+id/tv_resposta_3"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -124,8 +130,9 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:layout_width="30dp"
@@ -142,8 +149,18 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/body"
                 android:text="100 km/h"
-                android:id="@+id/tv_resposta_4" />
+                android:id="@+id/tv_resposta_4"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
         <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,5 +169,8 @@
             android:id="@+id/bt_enviar_resposta" />
     </LinearLayout>
 
-
+    <View
+        android:id="@+id/sample"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></View>
 </LinearLayout>

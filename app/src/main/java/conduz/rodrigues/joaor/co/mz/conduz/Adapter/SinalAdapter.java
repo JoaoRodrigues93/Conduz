@@ -37,7 +37,7 @@ public class SinalAdapter extends RecyclerView.Adapter<SinalAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Sinal sinal = dataset.get(position);
+        final Sinal sinal = dataset.get(position);
         holder.sinalCode.setText(sinal.getCodigo());
         holder.sinalImage.setImageResource(sinal.getIconeResource());
         holder.sinalTitle.setText(sinal.getNome());
@@ -46,6 +46,7 @@ public class SinalAdapter extends RecyclerView.Adapter<SinalAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),SinalDetailActivity.class);
+                intent.putExtra(SinalDetailActivity.ID_SINAL_ESCOLHIDO,sinal.getId());
                 view.getContext().startActivity(intent);
             }
         });

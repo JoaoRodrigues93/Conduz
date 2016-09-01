@@ -32,6 +32,10 @@ public class SinalChooserAdapter extends RecyclerView.Adapter<SinalChooserAdapte
         this.type = type;
     }
 
+    public void setDataset(List dataset) {
+        this.dataset = dataset;
+    }
+
     public void setmViewPager(ViewPager mViewPager) {
         this.mViewPager = mViewPager;
     }

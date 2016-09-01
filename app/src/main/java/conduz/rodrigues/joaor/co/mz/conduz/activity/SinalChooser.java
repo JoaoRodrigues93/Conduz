@@ -1,5 +1,6 @@
 package conduz.rodrigues.joaor.co.mz.conduz.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
@@ -29,8 +30,11 @@ import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.RecyclerTouchListener;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.SinalChooserAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.model.CapituloSinal;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Quadro;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Seccao;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Sinal;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Titulo;
 
 
@@ -39,11 +43,29 @@ public class SinalChooser extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
-    public static int capituloId = 1;
-    public static int seccaoId = 1;
+    public static int capituloId = 0;
+    public static int seccaoId = 0;
     public static String capitulo;
     public static String seccao;
 
+    public List<Quadro> seccaos;
+    public SinalChooserAdapter seccaoChooserAdapter;
+    public SinalChooser.PlaceholderFragment placeholderFragment;
+
+    public void setSeccaos(List<Quadro> seccaos) {
+        this.seccaos = seccaos;
+    }
+
+    public void setSeccaoChooserAdapter(SinalChooserAdapter seccaoChooserAdapter) {
+        this.seccaoChooserAdapter = seccaoChooserAdapter;
+    }
+
+    public void updateSeccao(){
+        seccaos = new ModelFactory(getApplicationContext()).SampleQuadro(capituloId);
+        seccaoChooserAdapter.setDataset(seccaos);
+        placeholderFragment.setmDataset(seccaos);
+        seccaoChooserAdapter.notifyDataSetChanged();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +111,10 @@ public class SinalChooser extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void setPlaceholderFragment(PlaceholderFragment placeholderFragment) {
+        this.placeholderFragment = placeholderFragment;
+    }
+
     public static class PlaceholderFragment extends Fragment {
         private List<CapituloSinal> capitulos;
         private List<Quadro> quadros;
@@ -103,10 +129,7 @@ public class SinalChooser extends AppCompatActivity {
             quadros = new ArrayList<Quadro>();
 
 
-            SampleModel sampleModel = new SampleModel();
 
-            capitulos = sampleModel.SampleCapituloSinal();
-            quadros = sampleModel.SampleQuadro();
         }
 
         public static PlaceholderFragment newInstance(int sectionNumber, ViewPager viewPager) {
@@ -118,6 +141,10 @@ public class SinalChooser extends AppCompatActivity {
             return fragment;
         }
 
+        public void setmDataset(List mDataset) {
+            this.mDataset = mDataset;
+        }
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -125,6 +152,26 @@ public class SinalChooser extends AppCompatActivity {
             RecyclerView sinal_title_list = (RecyclerView) rootView.findViewById(R.id.sinal_chooser);
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
             String type = null;
+
+            ModelFactory modelFactory = new ModelFactory(getContext());
+
+            capitulos = modelFactory.SampleCapituloSinal();
+            quadros = modelFactory.SampleQuadro(capituloId);
+
+            capitulo = capitulos.get(capituloId).getNome();
+            seccao = quadros.get(seccaoId).getNome();
+
+            if(capitulo.length()>20){
+                capitulo = capitulo.substring(0,15);
+                capitulo+="...";
+            }
+
+            if (seccao.length()>20){
+                seccao = seccao.substring(0,15);
+                seccao +="...";
+            }
+
+
 
             final int sectioNumber = getArguments().getInt(ARG_SECTION_NUMBER);
 
@@ -142,6 +189,15 @@ public class SinalChooser extends AppCompatActivity {
             sinalChooserAdapter.setmViewPager(mViewPager);
             sinal_title_list.setLayoutManager(layoutManager);
             sinal_title_list.setAdapter(sinalChooserAdapter);
+
+            if(sectioNumber==2){
+                SinalChooser sinalChooser = (SinalChooser)getActivity();
+                sinalChooser.setSeccaos(mDataset);
+                sinalChooser.setSeccaoChooserAdapter(sinalChooserAdapter);
+                sinalChooser.setPlaceholderFragment(this);
+            }
+
+
 
             final String finalType = type;
             sinal_title_list.addOnItemTouchListener(new RecyclerTouchListener(getContext(), sinal_title_list, new ClickListener(){
@@ -162,6 +218,8 @@ public class SinalChooser extends AppCompatActivity {
                         CapituloSinal capituloSinal = capitulos.get(position);
                         capituloId = capituloSinal.getId();
                         capitulo = capituloSinal.getNome();
+                        SinalChooser sinalChooser = (SinalChooser)getActivity();
+                        sinalChooser.updateSeccao();
                         mViewPager.setCurrentItem(1);
                     }
 
@@ -178,7 +236,11 @@ public class SinalChooser extends AppCompatActivity {
                         Quadro quadro = quadros.get(position);
                         seccaoId = quadro.getId();
                         seccao = quadro.getNome();
-                        getActivity().finish();
+                        Intent intent = new Intent(getContext(),HomeActivity.class);
+                        intent.putExtra(HomeActivity.CHANGE_TAB,true);
+                        intent.putExtra(HomeActivity.PREFERED_GROUP,"sinais");
+                        startActivity(intent);
+                        //getActivity().finish();
                     }
                 }
 

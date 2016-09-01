@@ -171,23 +171,26 @@ public class ModelFactory {
         return null;
     }
 
-    public List<Quadro> SampleQuadro() {
+    public List<Quadro> SampleQuadro(int capituloId) {
         int id;
         String nome;
         int ordemDoQuadro;
         String descricao;
+
+        int [] quadroArrays = {R.array.seccao_sinal_0,R.array.seccao_sinal_1,R.array.seccao_sinal_2,R.array.seccao_sinal_3,R.array.seccao_sinal_4,
+                R.array.seccao_sinal_5,R.array.seccao_sinal_6,R.array.seccao_sinal_7,R.array.seccao_sinal_8,R.array.seccao_sinal_9,R.array.seccao_sinal_10};
+        String [] quadroContent = context.getResources().getStringArray(quadroArrays[capituloId]);
+
         List<Quadro> quadros = new ArrayList<>();
         Quadro quadro;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < quadroContent.length; i++) {
             quadro = new Quadro();
-            id = (i + 1);
-            nome = "Quadro " + (i + 1);
+            id = i;
+            nome = quadroContent[i];
             ordemDoQuadro = i;
-            descricao = "Descrição" + (i + 1);
             quadro.setId(id);
             quadro.setNome(nome);
-            quadro.setDescricao(descricao);
             quadro.setOrdemDoQuadro(ordemDoQuadro);
 
             quadros.add(quadro);
@@ -200,6 +203,17 @@ public class ModelFactory {
         int id;
         String pergunta;
         String imagem;
+        int [] imagemResources = {R.drawable.pergunta1,R.drawable.pergunta2,R.drawable.pergunta3,R.drawable.pergunta4,
+                R.drawable.pergunta5,R.drawable.pergunta6,R.drawable.pergunta7,R.drawable.pergunta8,R.drawable.pergunta9,
+                R.drawable.pergunta10,R.drawable.pergunta11};
+
+        String [] perguntas = context.getResources().getStringArray(R.array.questao_pergunta);
+        String [] respostas1 = context.getResources().getStringArray(R.array.questao_resposta1);
+        String [] respostas2 = context.getResources().getStringArray(R.array.questao_resposta2);
+        String [] respostas3 = context.getResources().getStringArray(R.array.questao_resposta3);
+        String [] respostas4 = context.getResources().getStringArray(R.array.questao_resposta4);
+        String [] respostasCerta = context.getResources().getStringArray(R.array.questao_resposta_correcta);
+
         int imagemResource;
         String opcao1;
         String opcao2;
@@ -211,16 +225,17 @@ public class ModelFactory {
 
         Questao questao;
 
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 10; i++) {
             questao = new Questao();
-            id = (i + 1);
+            id = i;
             imagemResource = R.drawable.a1;
-            opcao1 = "Opção 1" + i;
-            opcao2 = "Opção 2" + i;
-            opcao3 = "Opção 3" + i;
-            opcao4 = "Opção 4" + i;
-            opcaoCorrecta = "Opção 2" + i;
-            pergunta = "Esta é a " + (i + 1) + "a pergunta .";
+            opcao1 = respostas1[i];
+            opcao2 = respostas2[i];
+            opcao3 = respostas3[i];
+            opcao4 = respostas4[i];
+            opcaoCorrecta =respostasCerta[i];
+            pergunta = perguntas[i];
+            imagemResource = imagemResources[i];
             questao.setId(id);
             questao.setOpcao1(opcao1);
             questao.setOpcao2(opcao2);
@@ -313,24 +328,50 @@ public class ModelFactory {
         return seccaos;
     }
 
-    public List<Sinal> SampleSinal() {
+    public List<Sinal> SampleSinal(int quadroId, int capituloId) {
         int id;
         String nome;
         String descricao;
         String codigo;
         int iconeResource;
         List<Sinal> sinais = new ArrayList<Sinal>();
+        String [] sinaisTitleContent=null;
+        String [] sinaisCodigoContent=null;
+        String [] sinaisDescricaoContent=null;
+        int [] sinaisIconeResourcesContent = null;
+        int [] sinaisIconeResources00= {R.drawable.e1,R.drawable.e2,R.drawable.e8,R.drawable.e12,R.drawable.e17,R.drawable.e29,R.drawable.e30,
+                R.drawable.e50};
+        int [] sinaisIconeResources01 = {R.drawable.f1,R.drawable.f5,R.drawable.f6,R.drawable.f7,R.drawable.f11,R.drawable.f14,R.drawable.f17,R.drawable.f55};
+        int [] sinaisTitle = {R.array.sinais_title_0_0,R.array.sinais_title_0_1};
+        int [] sinaisCodigo = {R.array.sinais_codigo_0_0,R.array.sinais_codigo_0_1};
+        int [] sinaisDescricao = {R.array.sinais_descricao_0_0,R.array.sinais_descricao_0_1};
+        int [] sinaisIconeResources = {R.array.icone_resources_0_0,R.array.icone_resources_0_1};
+
+
+        if(capituloId==0 && quadroId==0) {
+            sinaisTitleContent = context.getResources().getStringArray(sinaisTitle[0]);
+            sinaisCodigoContent = context.getResources().getStringArray(sinaisCodigo[0]);
+            sinaisDescricaoContent = context.getResources().getStringArray(sinaisDescricao[0]);
+            sinaisIconeResourcesContent = sinaisIconeResources00;
+        }
+        else if (capituloId==0 && quadroId==1){
+            sinaisTitleContent = context.getResources().getStringArray(sinaisTitle[1]);
+            sinaisCodigoContent = context.getResources().getStringArray(sinaisCodigo[1]);
+            sinaisDescricaoContent = context.getResources().getStringArray(sinaisDescricao[1]);
+            sinaisIconeResourcesContent = sinaisIconeResources01;
+        }
+
+
         Sinal sinal;
         LinkedList<Integer> iconeResources = iconeResources();
-
-        for (int i = 0; i < 10; i++) {
+        if(sinaisTitleContent!=null)
+        for (int i = 0; i < sinaisTitleContent.length; i++) {
             sinal = new Sinal();
-            id = (i + 1);
-            nome = "Sinal " + (i + 1);
-            descricao = "Está será uma descrição do sinal. " + (i + 1);
-            codigo = "A" + (i + 1);
-            iconeResource = iconeResources.pop();
-            iconeResources.addLast(iconeResource);
+            id = i;
+            nome = sinaisTitleContent[i];
+            descricao = sinaisDescricaoContent[i];
+            codigo = sinaisCodigoContent[i];
+            iconeResource = sinaisIconeResourcesContent[i];
 
             sinal.setId(id);
             sinal.setCodigo(codigo);
@@ -369,7 +410,7 @@ public class ModelFactory {
         List<Subtitulo> subtitulos = new ArrayList<Subtitulo>();
         for (int i = 0; i < subtituloContent.length; i++) {
             subtitulo = new Subtitulo();
-            id = 1;
+            id = i;
             nome = subtituloContent[i];
             descricao = "Descrição " + (i + 1);
             ordemDoSubtitulo = 0;
@@ -445,17 +486,16 @@ public class ModelFactory {
 
     public List<CapituloSinal> SampleCapituloSinal() {
         int id;
-        String nome;
-        String descricao;
-        int ordemDoCapitulo;
         CapituloSinal capitulo;
+
+        String [] capituloArray = context.getResources().getStringArray(R.array.capitulo_sinal);
 
         List<CapituloSinal> capitulos = new ArrayList<CapituloSinal>();
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 0; i <capituloArray.length; i++) {
             capitulo = new CapituloSinal();
             capitulo.setId(i);
-            capitulo.setNome("Capítulo " + i);
+            capitulo.setNome(capituloArray[i]);
             capitulo.setDescricao("Descrição " + i);
             capitulo.setOrdemDoCapitulo(i);
             capitulos.add(capitulo);

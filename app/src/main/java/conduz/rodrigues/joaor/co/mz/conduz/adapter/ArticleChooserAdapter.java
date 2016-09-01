@@ -42,6 +42,10 @@ public class ArticleChooserAdapter extends RecyclerView.Adapter<ArticleChooserAd
         this.type = type;
     }
 
+    public void setmDataset(List mDataset) {
+        this.mDataset = mDataset;
+    }
+
     @Override
     public ArticleChooserAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.article_chooser_list_item, parent, false);

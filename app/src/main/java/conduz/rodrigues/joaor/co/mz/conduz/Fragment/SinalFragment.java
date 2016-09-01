@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,6 +18,9 @@ import conduz.rodrigues.joaor.co.mz.conduz.Utility;
 import conduz.rodrigues.joaor.co.mz.conduz.activity.SinalChooser;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.SinalAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.model.CapituloSinal;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Quadro;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Sinal;
 
@@ -34,6 +38,12 @@ public class SinalFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private Button sinalChapter;
     private Button sinalSection;
+
+    private List<CapituloSinal> capitulos;
+    private List<Quadro> quadros;
+    private String capitulo;
+    private String seccao;
+
     private Button.OnClickListener chapterClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -75,29 +85,47 @@ public class SinalFragment extends Fragment {
         sinalChapter.setOnClickListener(chapterClickListener);
         sinalSection.setOnClickListener(sectionClickListener);
 
-        if(SinalChooser.capitulo!=null)
-            sinalChapter.setText(SinalChooser.capitulo);
-        if(SinalChooser.seccao!=null)
-            sinalSection.setText(SinalChooser.seccao);
+        ModelFactory modelFactory = new ModelFactory(getContext());
+
+        capitulos = modelFactory.SampleCapituloSinal();
+        quadros = modelFactory.SampleQuadro(SinalChooser.capituloId);
+
+        capitulo = capitulos.get(SinalChooser.capituloId).getNome();
+        seccao = quadros.get(SinalChooser.seccaoId).getNome();
+
+        if(capitulo.length()>20){
+            capitulo = capitulo.substring(0,15);
+            capitulo+="...";
+        }
+
+        if (seccao.length()>20){
+            seccao = seccao.substring(0,15);
+            seccao +="...";
+        }
+
+            sinalChapter.setText(capitulo);
+            sinalSection.setText(seccao);
 
         int noColumns = Utility.calculateNoOfColumns(getContext(),130);
         mLayoutManager = new GridLayoutManager(view.getContext(),noColumns);
         sinalList = (RecyclerView) view.findViewById(R.id.rv_sinais);
         sinalList.setLayoutManager(mLayoutManager);
-        SampleModel sampleModel = new SampleModel();
-        dataset = sampleModel.SampleSinal();
+
+        dataset = modelFactory.SampleSinal(SinalChooser.seccaoId,SinalChooser.capituloId);
         sinalAdapter = new SinalAdapter(dataset);
         sinalList.setAdapter(sinalAdapter);
+
+        //Toast.makeText(getActivity(), "capituloId "+SinalChooser.capituloId + " SeccaoId "+SinalChooser.seccaoId, Toast.LENGTH_SHORT).show();
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if(SinalChooser.capitulo!=null)
-            sinalChapter.setText(SinalChooser.capitulo);
-        if(SinalChooser.seccao!=null)
-            sinalSection.setText(SinalChooser.seccao);
+        if(capitulo!=null)
+            sinalChapter.setText(capitulo);
+        if(seccao!=null)
+            sinalSection.setText(seccao);
     }
 
     private void chapterClick(){

@@ -11,8 +11,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 import conduz.rodrigues.joaor.co.mz.conduz.fragment.SinalDetailFragment;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.model.CapituloSinal;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Quadro;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Sinal;
 
 public class SinalDetailActivity extends AppCompatActivity {
 
@@ -32,6 +38,13 @@ public class SinalDetailActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private Toolbar toolbar;
 
+    private List<CapituloSinal> capitulos;
+    private List<Quadro> quadros;
+    private List<Sinal> dataset;
+
+    public static  String ID_SINAL_ESCOLHIDO = "idSinalEscolhido";
+    private int idDoSinalEscolhido;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +56,44 @@ public class SinalDetailActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        ModelFactory modelFactory = new ModelFactory(getApplicationContext());
+
+        capitulos = modelFactory.SampleCapituloSinal();
+        quadros = modelFactory.SampleQuadro(SinalChooser.capituloId);
+        dataset = modelFactory.SampleSinal(SinalChooser.seccaoId,SinalChooser.capituloId);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        idDoSinalEscolhido = getIntent().getIntExtra(ID_SINAL_ESCOLHIDO,0);
 
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Sinal sinal = dataset.get(position);
+                toolbar.setTitle(sinal.getNome());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        setCurrentFragment();
+    }
+
+    private void setCurrentFragment() {
+        Sinal sinal;
+        for (int i=0; i<dataset.size();i++){
+            sinal = dataset.get(i);
+            if(sinal.getId()==idDoSinalEscolhido)
+                mViewPager.setCurrentItem(i);
+        }
     }
 
 
@@ -91,15 +137,16 @@ public class SinalDetailActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            toolbar.setTitle("Trânsito proibido");
-            return SinalDetailFragment.newInstance("Trânsito proibido",
-                    "Sentido proibido. Indicação de transitar no sentido contrário para o qual o sinal está orientado.","E1",R.drawable.sinal_sentido_proibido);
+            Sinal sinal = dataset.get(position);
+            toolbar.setTitle(sinal.getNome());
+            return SinalDetailFragment.newInstance(sinal.getNome(),
+                    sinal.getDescricao(),sinal.getCodigo(),sinal.getIconeResource());
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 15;
+            return dataset.size();
         }
 
         @Override

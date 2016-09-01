@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,7 +51,47 @@ public class ArticleChooser extends AppCompatActivity {
     public static String subtitulo;
     public static String seccao;
     public Context context;
+    public List<Subtitulo> subtitulos;
+    public List<Seccao> seccaos;
+    public ArticleChooserAdapter subtituloChooserAdapter;
+    public ArticleChooserAdapter seccaoChooserAdapter;
+    public ArticleChooser.PlaceholderFragment placeholderFragment;
 
+    public void setSeccao(List<Seccao> seccao) {
+        this.seccaos = seccao;
+    }
+
+    public void setSubtitulos(List<Subtitulo> subtitulos) {
+        this.subtitulos = subtitulos;
+    }
+
+    public void setSubtituloChooserAdapter(ArticleChooserAdapter subtituloChooserAdapter) {
+        this.subtituloChooserAdapter = subtituloChooserAdapter;
+    }
+
+    public void setPlaceholderFragment(PlaceholderFragment placeholderFragment) {
+        this.placeholderFragment = placeholderFragment;
+    }
+
+    public void updateSubtitulos(){
+        subtitulos = new ModelFactory(getApplicationContext()).SampleSubtitulo(ArticleChooser.tituloId);
+        //if(subtituloChooserAdapter!=null)
+        placeholderFragment.setCapitulo(subtitulos);
+        subtituloChooserAdapter.setmDataset(subtitulos);
+        subtituloChooserAdapter.notifyDataSetChanged();
+    }
+
+    public void updateSeccaos (){
+        seccaos = new ModelFactory(getApplicationContext()).SampleSeccao(ArticleChooser.subtituloId,ArticleChooser.tituloId);
+        //if(subtituloChooserAdapter!=null)
+        placeholderFragment.setSeccao(seccaos);
+        seccaoChooserAdapter.setmDataset(seccaos);
+        seccaoChooserAdapter.notifyDataSetChanged();
+    }
+
+    public void setSeccaoChooserAdapter(ArticleChooserAdapter seccaoChooserAdapter) {
+        this.seccaoChooserAdapter = seccaoChooserAdapter;
+    }
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -86,6 +127,8 @@ public class ArticleChooser extends AppCompatActivity {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -109,10 +152,6 @@ public class ArticleChooser extends AppCompatActivity {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
 
         private List<Titulo> titulo;
         private List<Subtitulo> capitulo;
@@ -148,7 +187,6 @@ public class ArticleChooser extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_article_chooser, container, false);
 
-            SampleModel sampleModel = new SampleModel();
             ModelFactory modelFactory = new ModelFactory(getContext());
             titulo = modelFactory.SampleTitulo();
             capitulo = modelFactory.SampleSubtitulo(tituloId);
@@ -165,14 +203,30 @@ public class ArticleChooser extends AppCompatActivity {
                 type = "titulo";
             }
             else if (sectioNumber==2) {
+                ArticleChooser articleChooser = (ArticleChooser)getActivity();
                 mDataset = capitulo;
+                articleChooser.setSubtitulos(capitulo);
+                articleChooser.setPlaceholderFragment(this);
                 type = "capitulo";
             }
             else if(sectioNumber==3) {
+                ArticleChooser articleChooser = (ArticleChooser)getActivity();
                 mDataset = seccao;
+                articleChooser.setSeccao(seccao);
+                articleChooser.setPlaceholderFragment(this);
                 type = "seccao";
             }
             ArticleChooserAdapter articleChooserAdapter = new ArticleChooserAdapter(mDataset,type);
+            if(sectioNumber==2){
+                ArticleChooser articleChooser = (ArticleChooser)getActivity();
+                articleChooser.setSubtituloChooserAdapter(articleChooserAdapter);
+            }
+
+            if(sectioNumber==3){
+                ArticleChooser articleChooser = (ArticleChooser)getActivity();
+                articleChooser.setSeccaoChooserAdapter(articleChooserAdapter);
+            }
+
             articleChooserAdapter.setMainViewPager(mViewPager);
             article_title_list.setLayoutManager(layoutManager);
             article_title_list.setAdapter(articleChooserAdapter);
@@ -180,20 +234,27 @@ public class ArticleChooser extends AppCompatActivity {
             article_title_list.addOnItemTouchListener(new RecyclerTouchListener(getContext(), article_title_list, new ClickListener() {
                 @Override
                 public void onClick(View view, int position) {
-                    if (finalType == "titulo")
+                    if (finalType.equalsIgnoreCase("titulo"))
                     {
                        ArticleChooser.tituloId = titulo.get(position).getId();
                        ArticleChooser.titulo  = titulo.get(position).getNome();
+                        Log.d("TituloId",""+ArticleChooser.tituloId);
+                        ArticleChooser articleChooser = (ArticleChooser)getActivity();
+                        articleChooser.updateSubtitulos();
                     }
-                    else if(finalType =="capitulo")
+                    else if(finalType.equalsIgnoreCase("capitulo"))
                     {
                         ArticleChooser.subtituloId =  capitulo.get(position).getId();
                         ArticleChooser.subtitulo = capitulo.get(position).getNome();
+                        Log.d("CapituloId",""+ArticleChooser.subtituloId);
+                        ArticleChooser articleChooser = (ArticleChooser)getActivity();
+                        articleChooser.updateSeccaos();
                     }
-                    else if (finalType == "seccao")
+                    else if (finalType.equalsIgnoreCase("seccao"))
                     {
                         ArticleChooser.seccaoId = seccao.get(position).getId();
                         ArticleChooser.seccao = seccao.get(position).getNome();
+                        Log.d("SeccaoId",""+ArticleChooser.seccaoId);
                     }
                 }
 
@@ -204,6 +265,15 @@ public class ArticleChooser extends AppCompatActivity {
             }));
 
             return rootView;
+        }
+
+        public void setCapitulo(List<Subtitulo> capitulo) {
+            this.capitulo = capitulo;
+        }
+
+
+        public void setSeccao(List<Seccao> seccao) {
+            this.seccao = seccao;
         }
     }
 

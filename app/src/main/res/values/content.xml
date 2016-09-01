@@ -356,8 +356,171 @@ VIA RESERVADA A AUTÓMOVEIS E MOTOCICLOS: são vias equiparadas às auto-estrada
         <item>Marcas Transversais</item>
         <item>Marcas Reguladoras do Estacionamento e Paragem</item>
     </string-array>
-
     <string-array name="seccao_sinal_10">
         <item>Sinais dos Condutores</item>
+    </string-array>
+
+    <string-array name="sinais_title_0_0">
+        <item>Trânsito Proibido</item>
+        <item>Sentido Proibido</item>
+        <item>Proibição de ultrapassar</item>
+        <item>Proibição de Exceder a velocidade de … Km/h</item>
+        <item>Trânsito Proibido a Peões</item>
+        <item>Proibição de Mudar de Direcção para a esquerda</item>
+        <item>Proibição de mudar de direcção para a direita</item>
+        <item>Estacionamento Proibido</item>
+    </string-array>
+    <string-array name="sinais_codigo_0_0">
+        <item>E1</item>
+        <item>E2</item>
+        <item>E8</item>
+        <item>E12</item>
+        <item>E17</item>
+        <item>E29</item>
+        <item>E30</item>
+        <item>E50</item>
+    </string-array>
+    <string-array name="sinais_descricao_0_0">
+        <item>Trânsito Proibido</item>
+        <item>Sentido Proibido</item>
+        <item>Proibição de ultrapassar</item>
+        <item>Proibição de Exceder a velocidade de … Km/h</item>
+        <item>Trânsito Proibido a Peões</item>
+        <item>Proibição de Mudar de Direcção para a esquerda</item>
+        <item>Proibição de mudar de direcção para a direita</item>
+        <item>Estacionamento Proibido</item>
+    </string-array>
+
+
+    <string-array name="sinais_title_0_1">
+        <item>Obrigação de circular a velocidade mínima de … Km/h</item>
+        <item>Sentido Obrigatório para a esquerda</item>
+        <item>Sentido obrigatório para direita</item>
+        <item>Sentido obrigatório para frente</item>
+        <item>Pista obrigatória para peões</item>
+        <item>Via obrigatória para automóveis pesados</item>
+        <item>Sentido obrigatório giratório</item>
+        <item>Obrigação de acender as luzes</item>
+
+    </string-array>
+    <string-array name="sinais_codigo_0_1">
+        <item>F1</item>
+        <item>F5</item>
+        <item>F6</item>
+        <item>F7</item>
+        <item>F11</item>
+        <item>F14</item>
+        <item>F17</item>
+        <item>F55</item>
+    </string-array>
+    <string-array name="sinais_descricao_0_1">
+        <item>Obrigação de circular a velocidade mínima de … Km/h</item>
+        <item>Sentido Obrigatório para a esquerda</item>
+        <item>Sentido obrigatório para direita</item>
+        <item>Sentido obrigatório para frente</item>
+        <item>Pista obrigatória para peões</item>
+        <item>Via obrigatória para automóveis pesados</item>
+        <item>Sentido obrigatório giratório</item>
+        <item>Obrigação de acender as luzes</item>
+    </string-array>
+    <integer-array name="icone_resources_0_0">
+        <item>@drawable/e1</item>
+        <item>@drawable/e2</item>
+        <item>@drawable/e8</item>
+        <item>@drawable/e12</item>
+        <item>@drawable/e17</item>
+        <item>@drawable/e29</item>
+        <item>@drawable/e30</item>
+        <item>@drawable/e50</item>
+    </integer-array>
+    <integer-array name="icone_resources_0_1">
+        <item>@drawable/f1</item>
+        <item>@drawable/f5</item>
+        <item>@drawable/f6</item>
+        <item>@drawable/f7</item>
+        <item>@drawable/f11</item>
+        <item>@drawable/f14</item>
+        <item>@drawable/f17</item>
+        <item>@drawable/f55</item>
+    </integer-array>
+
+
+    <string-array name="questao_pergunta">
+        <item>Conduzir sob o efeito do álcool:</item>
+        <item>Todos nós, enquanto utentes da via pública, devemos evitar qualquer comportamento que possa provocar embaraço no trânsito.</item>
+        <item>O velocímetro indica:</item>
+        <item>Que significado tem a sinalização vertical?</item>
+        <item>Qual o significado o sinal?</item>
+        <item>Este sinal sinal indica:</item>
+        <item>Qual a velocidade máxima permitida dentro das localidades?</item>
+        <item>É permitido a inversão de marcha numa via de sentido único?</item>
+        <item>Via pública é:</item>
+        <item>Via de trânsito rápido é:</item>
+        <item>Via de comunicação terrestre do domínio privado aberta ao trânsito público é:</item>
+    </string-array>
+    <string-array name="questao_resposta1">
+        <item>Aumenta a capacidade de atenção.</item>
+        <item>Certo</item>
+        <item>A velocidade instantânea.</item>
+        <item>Obrigação de circular à velocidade indicada no sinal.</item>
+        <item>Sentido obrigatório giratório</item>
+        <item>Sentido permitido</item>
+        <item>60 Km/h</item>
+        <item>Sim, se o trânsito for favorável</item>
+        <item>Via de comunicação terrestre destinada ao trânsito público.</item>
+        <item>Via equivalente auto-estrada</item>
+        <item>Via pública</item>
+    </string-array>
+    <string-array name="questao_resposta2">
+        <item>Diminui a capacidade de atenção.</item>
+        <item>Errado</item>
+        <item>A velocidade máxima a transitar no local.</item>
+        <item>Proibição de circular a velocidade inferior a 30 km/h.</item>
+        <item>Sentido proibido</item>
+        <item>Sentido proibido</item>
+        <item>70 Km/h</item>
+        <item>Sim, sempre</item>
+        <item>Via de comunicação terrestre destinada ao trânsito privado.</item>
+        <item>É uma via de abrandamento</item>
+        <item>Via de trânsito</item>
+    </string-array>
+    <string-array name="questao_resposta3">
+        <item>Não altera a capacidade de atenção.</item>
+        <item>Vale apenas para condutores de veículos automóveis</item>
+        <item>A velocidade média.</item>
+        <item>Proibição de circular a velocidade superior a 30 km/h.</item>
+        <item>Sentido giratório opcional</item>
+        <item>Trânsito proibido</item>
+        <item>80 Km/h</item>
+        <item>Não</item>
+        <item>Via de comunicação terrestre destinada ao trânsito de automóveis do estado.</item>
+        <item>É uma via de aceleração</item>
+        <item>Via de trânsito rápido</item>
+    </string-array>
+    <string-array name="questao_resposta4">
+        <item>Não tem nenhum efeito.</item>
+        <item>O código de estrada não aborda nada acerca disso</item>
+        <item>A velocidade mínima a transitar no local.</item>
+        <item>Obrigação a circular a apenas 30 km/h.</item>
+        <item>Sentido giratório proibido</item>
+        <item>Estrada com prioridade</item>
+        <item>120 Km/h</item>
+        <item>Sim, mas apenas para automóveis ligeiros</item>
+        <item>Via de comunicação terrestre destinada ao trânsito de automóveis de transporte de passageiros</item>
+        <item>É uma via onde a velocidade mínima é de 120 Km/h</item>
+        <item>Via equiparada a via pública</item>
+    </string-array>
+    <string-array name="questao_resposta_correcta">
+        <item>Diminui a capacidade de atenção.</item>
+        <item>Errado</item>
+        <item>A velocidade instantânea.</item>
+        <item>Proibição de circular a velocidade superior a 30 km/h.</item>
+        <item>Sentido obrigatório giratório</item>
+        <item>Sentido proibido</item>
+        <item>60 Km/h</item>
+        <item>Não</item>
+        <item>Via de comunicação terrestre destinada ao trânsito público.</item>
+        <item>Via equivalente auto-estrada</item>
+        <item>Via equiparada a via pública</item>
     </string-array>
 </resources>
