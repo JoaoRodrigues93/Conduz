@@ -1,0 +1,363 @@
+<resources>
+    <string-array name="capitulos_tema">
+        <item>Composição</item>
+        <item>Classificação das Vias</item>
+        <item>Sinalização das Trânsito</item>
+        <item>Regras de Trânsito</item>
+        <item>Velocidade</item>
+    </string-array>
+    <string-array name="tema_0">
+        <item>Via</item>
+        <item>Veículo</item>
+        <item>Ambiente</item>
+        <item>Homem</item>
+    </string-array>
+    <string-array name="tema_1">
+        <item>Caminhos</item>
+        <item>Ruas</item>
+        <item>Estradas</item>
+    </string-array>
+    <string-array name="tema_2">
+        <item>Agêntes reguladores de trânsito</item>
+        <item>Luminosos</item>
+        <item>Condutores</item>
+        <item>Gráficos</item>
+    </string-array>
+    <string-array name="tema_3">
+        <item>Liberdade de trânsito</item>
+        <item>Fiscalização do trânsito</item>
+        <item>Trânsito de veículos e animais</item>
+    </string-array>
+    <string-array name="tema_4">
+        <item>Velocidade Moderada</item>
+         <item>Velocidade instantânea</item>
+         <item>Velocidade média</item>
+    </string-array>
+
+    <string-array name="temas_0_content">
+        <item>Os seguintes conceitos são apresentados para as vias:\n\n
+VIA PÚBLICA: via de comunicação terrestre destinada ao trânsito público;\n\n
+
+VIA EQUIPARADA A VIA PÚBLICA: via de comunicação terrestre do domínio privado aberta ao trânsito público;\n\n
+
+VIA DE TRÂNSITO: zona longitudinal da faixa de rodagem, destinada à circulação de uma única fila de veículos;\n\n
+
+VIA DE ACELERAÇÃO: via de trânsito resultante do alargamento da faixa de rodagem e destinada a permitir que os veículos que entram numa via pública adquiram a velocidade conveniente para se incorporarem na corrente de trânsito principal;\n\n
+
+VIA DE ABRANDAMENTO: via de trânsito resultante do alargamento da faixa de rodagem e destinada a permitir que os veículos que vão sair de uma via pública diminuam a velocidade já fora da corrente de trânsito anterior;\n\n
+
+VIA DE TRÂNSITO RÁPIDO – via equivalente a auto-estrada;\n\n
+
+VIA RESERVADA A AUTÓMOVEIS E MOTOCICLOS: são vias equiparadas às auto-estradas.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+
+    </string-array>
+    <string-array name="temas_1_content">
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+    </string-array>
+    <string-array name="temas_2_content">
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+    </string-array>
+    <string-array name="temas_3_content">
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+    </string-array>
+    <string-array name="temas_4_content">
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+        <item>Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.\n\n
+        Este texto vem apenas mostrar como será apresentada a teoria, após o utilizador escolher um determinado tema uma página semelhante a está será aberta e ele poderá ler a teoria e após isso clicar no botão abaixo para realizar exercícios de modo a fixar melhor a matéria e testar o seu rendimento neste determinado tema.</item>
+    </string-array>
+
+    <string-array name="titulos">
+        <item>Disposições Gerais</item>
+        <item>Trânsito de Veículos e animais</item>
+        <item>Trânsito de Peões</item>
+        <item>Veículos</item>
+        <item>Habilitação legal para conduzir</item>
+        <item>Responsabilidade</item>
+        <item>Procedimentos de Fiscalização</item>
+        <item>Processo</item>
+    </string-array>
+
+    <string-array name="subtitulo_0">
+        <item>Disposições Gerais</item>
+    </string-array>
+
+    <string-array name="subtitulo_1">
+        <item>Disposições Comuns</item>
+        <item>Disposições Especiais para a Fiscalização da Condução sob influência de Alcool ou de Substâncias Psicotrópicas</item>
+        <item>Disposições Especiais para Motociclos, Ciclo-Motores e Velocipedes.</item>
+    </string-array>
+
+    <string-array name="subtitulo_2">
+        <item>Trânsito de Peões</item>
+    </string-array>
+
+    <string-array name="subtitulo_3">
+        <item>Classificação de Veículos</item>
+        <item>Inspecção e Matriculas</item>
+    </string-array>
+
+    <string-array name="subtitulo_4">
+        <item>Habilitação legal para conduzir</item>
+    </string-array>
+    <string-array name="subtitulo_5">
+        <item>Disposições Gerais</item>
+         <item>Disposições Especiais</item>
+         <item>Acidentes de Viação</item>
+         <item>Garantia de Responsabilidade Civil</item>
+    </string-array>
+    <string-array name="subtitulo_6">
+        <item>Apreensões</item>
+        <item>Abandono, Bloqueamento e Remoção de Veículos</item>
+    </string-array>
+
+    <string-array name="subtitulo_7">
+        <item>Competência</item>
+        <item>Decisão</item>
+        <item>Recurso</item>
+        <item>Disposições Finais</item>
+    </string-array>
+
+    <string-array name="seccao_0_0">
+        <item>Disposições Gerais</item>
+    </string-array>
+
+    <string-array name="seccao_1_0">
+        <item>Sinais do Condutores</item>
+        <item>Velocidade</item>
+        <item>Cedência de Passagem, Cruzamentos, Entroncamentos e Rotundas</item>
+        <item>Manobras em Especial</item>
+        <item>Transporte de Passageiros e de Carga</item>
+        <item>Limites de Peso e Dimensão dos Veículos</item>
+        <item>Iluminação</item>
+        <item>Trânsito de Veículos que efectuem Transportes Especiais</item>
+        <item>Trânsito em certas vias ou trocos</item>
+        <item>Poluição</item>
+    </string-array>
+
+    <string-array name="seccao_1_1">
+        <item>Procedimento para a Fiscalização da Conduta sobre Influência de Alcool ou de Substâncias Psictrópicas</item>
+        <item>Comportamento em Caso de Avaria ou de Acidente</item>
+    </string-array>
+    <string-array name="seccao_1_2">
+        <item>Regras Especiais</item>
+        <item>Iluminação e Sanções</item>
+    </string-array>
+    
+    <string-array name="seccao_2_0">
+        <item>Trânsito de Peões</item>
+    </string-array>
+
+    <string-array name="seccao_3_0">
+        <item>Classificação de Veículos</item>
+    </string-array>
+
+    <string-array name="seccao_3_1">
+        <item>Inspecção e Matriculas</item>
+    </string-array>
+
+    <string-array name="seccao_4_0">
+        <item>Habilitação legal para conduzir</item>
+    </string-array>
+
+    <string-array name="seccao_5_0">
+        <item>Disposições Gerais</item>
+    </string-array>
+
+    <string-array name="seccao_5_1">
+        <item>Disposições Especiais</item>
+    </string-array>
+
+    <string-array name="seccao_5_2">
+        <item>Acidentes de Viação</item>
+    </string-array>
+
+    <string-array name="seccao_5_3">
+        <item>Garantia de Responsabilidade Civil</item>
+    </string-array>
+
+    <string-array name="seccao_6_0">
+        <item>Apreensões</item>
+    </string-array>
+    <string-array name="seccao_6_1">
+        <item>Abandono, Bloqueamento e Remoção de Veículos</item>
+    </string-array>
+
+    <string-array name="seccao_7_0">
+        <item>Competência</item>
+    </string-array>
+
+    <string-array name="seccao_7_1">
+        <item>Decisão</item>
+    </string-array>
+
+    <string-array name="seccao_7_2">
+        <item>Recurso</item>
+    </string-array>
+
+    <string-array name="seccao_7_3">
+        <item>Disposições Finais</item>
+    </string-array>
+
+
+    <string-array name="artigos_0_0_0_title">
+        <item>Definições</item>
+        <item>Âmbito de aplicação</item>
+        <item>Liberdade de trânsito</item>
+    </string-array>
+    <string-array name="artigos_0_0_0_content">
+        <item>Os termos utilizados no presente Código de Estrada e legislação complementar têm o significado que consta do glossário que constitui Anexo I, o qual faz parte integrante do mesmo.</item>
+        <item>O disposto no presente código aplica-se ao trânsito rodoviário nas vias de domínio público do Estado e nas vias de domínio privado quando abertas ao trânsito público em tudo que não estiver especialmente regulado por acordo celebrado com os respectivos proprietários.</item>
+        <item>1.	Nas vias a que se refere o artigo anterior é livre a circulação com as restrições constantes no presente Código de Estrada e legislação complementar.\n\n
+2.	As pessoas devem abster-se de actos que impeçam ou embaracem o trânsito ou comprometam a segurança ou a comodidade dos utentes das vias.\n\n
+3.	Quem práticar actos com intuito de impedir ou embaraçar a circulação de veículos é punido com a multa de 3000,00MT, se a sanção mais grave não for aplicável por força de outra disposição legal.
+</item>
+    </string-array>
+    <integer-array name="artigos_0_0_0_number">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="artigo_sample_title">
+        <item>Título do Artigo</item>
+        <item>Outro Título do Artigo</item>
+        <item>Mais um Título do Artigo</item>
+    </string-array>
+    <string-array name="artigo_sample_content">
+        <item>Este artigo é apenas um exemplo de como serão apresentados os vários artigos do código de estrada nesta plataforma.</item>
+        <item>Este artigo é apenas um exemplo de como serão apresentados os vários artigos do código de estrada nesta plataforma.</item>
+        <item>Este artigo é apenas um exemplo de como serão apresentados os vários artigos do código de estrada nesta plataforma.</item>
+    </string-array>
+    <integer-array name="artigo_sample_number">
+        <item>10</item>
+        <item>12</item>
+        <item>12</item>
+    </integer-array>
+
+
+    <string-array name="capitulo_sinal">
+        <item>Prescrição Absoluta</item>
+        <item>Sinais doas Agentes Reguladores de Trânsito</item>
+        <item>Sinais Temporários</item>
+        <item>Sinais Luminosos</item>
+        <item>Sinais de Perigo</item>
+        <item>Sinais de Indicação</item>
+        <item>Sinais de Afectação de Vias</item>
+        <item>Sinais de cedência de Passagens</item>
+        <item>Sinais Combinados</item>
+        <item>Sinais Horizontais</item>
+        <item>Sinais dos Condutores</item>
+    </string-array>
+
+    <string-array name="seccao_sinal_0">
+        <item>Sinais de Proibição</item>
+        <item>Sinais de Obrigação</item>
+    </string-array>
+    <string-array name="seccao_sinal_1">
+        <item>Sinais doas Agentes Reguladores de Trânsito</item>
+    </string-array>
+    <string-array name="seccao_sinal_2">
+        <item>Sinais Temporários</item>
+    </string-array>
+    <string-array name="seccao_sinal_3">
+        <item>Sinais Luminosos</item>
+    </string-array>
+    <string-array name="seccao_sinal_4">
+        <item>Sinais de Perigo</item>
+    </string-array>
+    <string-array name="seccao_sinal_5">
+        <item>Sinais de Informação</item>
+        <item>Sinais de Simples Indicação</item>
+        <item>Sinais de identificação de Localidades e Estradas</item>
+        <item>Sinais de Interesse Turístico</item>
+    </string-array>
+    <string-array name="seccao_sinal_6">
+        <item>Sinais de Afectação de Vias</item>
+    </string-array>
+    <string-array name="seccao_sinal_7">
+        <item><item>Sinais de cedência de Passagens</item></item>
+    </string-array>
+    <string-array name="seccao_sinal_8">
+        <item>Sinais Combinados</item>
+    </string-array>
+
+    <string-array name="seccao_sinal_9">
+        <item>Sinais Marcados no Pavimento</item>
+        <item>Marcas Transversais</item>
+        <item>Marcas Reguladoras do Estacionamento e Paragem</item>
+    </string-array>
+
+    <string-array name="seccao_sinal_10">
+        <item>Sinais dos Condutores</item>
+    </string-array>
+</resources>

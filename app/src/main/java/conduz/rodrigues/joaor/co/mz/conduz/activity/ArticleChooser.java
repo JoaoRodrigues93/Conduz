@@ -1,5 +1,6 @@
 package conduz.rodrigues.joaor.co.mz.conduz.activity;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +26,7 @@ import conduz.rodrigues.joaor.co.mz.conduz.ClickListener;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.RecyclerTouchListener;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.ArticleChooserAdapter;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Seccao;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Subtitulo;
@@ -41,12 +43,13 @@ public class ArticleChooser extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    public static int tituloId = 1;
-    public static int subtituloId = 1;
-    public static int seccaoId = 1;
+    public static int tituloId = 0;
+    public static int subtituloId = 0;
+    public static int seccaoId = 0;
     public static String titulo;
     public static String subtitulo;
     public static String seccao;
+    public Context context;
 
 
     /**
@@ -65,7 +68,7 @@ public class ArticleChooser extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
+        context = getApplicationContext();
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -124,11 +127,6 @@ public class ArticleChooser extends AppCompatActivity {
             capitulo = new ArrayList<>();
             seccao = new ArrayList<>();
 
-            SampleModel sampleModel = new SampleModel();
-
-            titulo = sampleModel.SampleTitulo();
-            capitulo = sampleModel.SampleSubtitulo();
-            seccao = sampleModel.SampleSeccao();
 
         }
 
@@ -149,6 +147,14 @@ public class ArticleChooser extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_article_chooser, container, false);
+
+            SampleModel sampleModel = new SampleModel();
+            ModelFactory modelFactory = new ModelFactory(getContext());
+            titulo = modelFactory.SampleTitulo();
+            capitulo = modelFactory.SampleSubtitulo(tituloId);
+            seccao = modelFactory.SampleSeccao(subtituloId,tituloId);
+
+
             RecyclerView article_title_list = (RecyclerView) rootView.findViewById(R.id.article_chooser);
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
             String type = null;

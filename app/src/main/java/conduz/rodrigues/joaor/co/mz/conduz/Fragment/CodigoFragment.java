@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,11 @@ import conduz.rodrigues.joaor.co.mz.conduz.activity.ArticleChooser;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.ArtigoAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Artigo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Seccao;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Subtitulo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Titulo;
 
 
 /**
@@ -48,6 +53,14 @@ public class CodigoFragment extends Fragment {
     private String titulo;
     private String subtitulo;
     private String seccao;
+
+    private List<Titulo> titulos;
+    private List<Subtitulo> subtitulos;
+    private List<Seccao> seccaos;
+
+/*    private TextView articleTitle;
+    private TextView articleNumber;
+    private TextView articleContent;*/
 
     
     private AppCompatButton buttonChapterChooser;
@@ -105,6 +118,28 @@ public class CodigoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_codigo, container, false);
+        ModelFactory modelFactory = new ModelFactory(getContext());
+        titulos = modelFactory.SampleTitulo();
+        subtitulos = modelFactory.SampleSubtitulo(ArticleChooser.tituloId);
+        seccaos = modelFactory.SampleSeccao(ArticleChooser.subtituloId,ArticleChooser.tituloId);
+
+        seccao = seccaos.get(ArticleChooser.seccaoId).getNome();
+        titulo = titulos.get(ArticleChooser.tituloId).getNome();
+        subtitulo = subtitulos.get(ArticleChooser.subtituloId).getNome();
+
+        if(titulo.length()>20){
+            titulo = titulo.substring(0,15);
+            titulo+="...";
+        }
+        if (seccao.length() >20) {
+            seccao = seccao.substring(0, 15);
+            seccao+="...";
+        }
+        if (subtitulo.length()>20) {
+            subtitulo = subtitulo.substring(0, 15);
+            subtitulo+="...";
+        }
+
         mLayoutManager = new LinearLayoutManager(view.getContext());
         buttonChapterChooser = (AppCompatButton)view.findViewById(R.id.bt_article_chapter);
         buttonThemeChooser = (AppCompatButton) view.findViewById(R.id.bt_article_theme);
@@ -113,12 +148,18 @@ public class CodigoFragment extends Fragment {
         if(subtitulo!=null)
         buttonChapterChooser.setText(subtitulo);
 
+        mDataset = modelFactory.SampleArtigo(ArticleChooser.seccaoId,ArticleChooser.subtituloId,ArticleChooser.tituloId);
+
+        /*articleTitle = (TextView) view.findViewById(R.id.tv_article_number);
+        articleNumber = (TextView) view.findViewById(R.id.tv_article_number);
+        articleContent = (TextView) view.findViewById(R.id.tv_article_content);*/
+
         buttonChapterChooser.setOnClickListener(chapterOnClickListener);
         buttonThemeChooser.setOnClickListener(themeOnClickListener);
         artigoList = (RecyclerView) view.findViewById(R.id.rv_artigos);
         artigoList.setLayoutManager(mLayoutManager);
-        SampleModel sampleModel = new SampleModel();
-        mDataset = sampleModel.SampleArtigo(Integer.valueOf(""+subtituloId+""+seccaoId));
+        //SampleModel sampleModel = new SampleModel();
+       // mDataset = sampleModel.SampleArtigo(Integer.valueOf(""+subtituloId+""+seccaoId));
 
         ArtigoAdapter artigoAdapter = new ArtigoAdapter(mDataset);
         artigoList.setAdapter(artigoAdapter);

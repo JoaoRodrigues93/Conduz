@@ -22,6 +22,7 @@ public class LeituraActivity extends AppCompatActivity {
     public static final String CONTENT = "content";
     public static final String IMAGE_RESOURCE = "imageResource";
     public static final String COLOR = "color";
+    public static final String CHAPTER = "chapter" ;
 
     private TextView subtitle;
     private ImageView headerImage;
@@ -39,6 +40,7 @@ public class LeituraActivity extends AppCompatActivity {
         toolbar.setTitle(intent.getStringExtra(TITLE));
         subtitle.setText(intent.getStringExtra(SUBTITLE));
         headerImage.setImageResource(intent.getIntExtra(IMAGE_RESOURCE,0));
+        content.setText(intent.getStringExtra(CONTENT));
         Drawable drawable = headerImage.getDrawable();
         drawable.setColorFilter(getResources().getColor(R.color.soft_grey), PorterDuff.Mode.MULTIPLY);
         appBarLayout.setBackgroundColor(intent.getIntExtra(COLOR,0));

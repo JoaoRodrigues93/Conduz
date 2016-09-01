@@ -17,6 +17,7 @@ import java.util.List;
 
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Tema;
 
@@ -65,11 +66,12 @@ public class TeoriaAdapter extends RecyclerView.Adapter<TeoriaAdapter.ViewHolder
         RecyclerView recyclerView = holder.temas;
 
         List<Tema> newDataset;
-        SampleModel sampleModel = new SampleModel();
-        newDataset = sampleModel.SampleTema();
+        ModelFactory sampleModel = new ModelFactory(holder.temas.getContext());
+        newDataset = sampleModel.SampleTema(capitulo.getId());
 
 
         TemaAdapter temaAdapter = new TemaAdapter(newDataset,mColors[position]);
+        temaAdapter.setCapitulo(capitulo);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(recyclerView.getContext(),3);
         recyclerView.setAdapter(temaAdapter);
         recyclerView.setLayoutManager(layoutManager);

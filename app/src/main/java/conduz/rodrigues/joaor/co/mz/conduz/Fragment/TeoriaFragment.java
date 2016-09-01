@@ -16,6 +16,7 @@ import conduz.rodrigues.joaor.co.mz.conduz.adapter.SimpleAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.adapter.TeoriaAdapter;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
+import conduz.rodrigues.joaor.co.mz.conduz.model.ModelFactory;
 import conduz.rodrigues.joaor.co.mz.conduz.model.SampleModel;
 
 
@@ -97,8 +98,7 @@ public class TeoriaFragment extends Fragment {
 
     private void fetchDataset (){
 
-        SampleModel sampleModel = new SampleModel();
-
+        ModelFactory sampleModel = new ModelFactory(getContext());
         dataSet = sampleModel.SampleCapitulo();
     }
 

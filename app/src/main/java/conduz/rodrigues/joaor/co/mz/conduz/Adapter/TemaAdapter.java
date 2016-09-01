@@ -17,6 +17,7 @@ import java.util.List;
 
 import conduz.rodrigues.joaor.co.mz.conduz.activity.LeituraActivity;
 import conduz.rodrigues.joaor.co.mz.conduz.R;
+import conduz.rodrigues.joaor.co.mz.conduz.model.Capitulo;
 import conduz.rodrigues.joaor.co.mz.conduz.model.Tema;
 
 /**
@@ -26,6 +27,7 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
 
     private List<Tema> mDataset;
     private int mColor;
+    private Capitulo capitulo;
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder  {
@@ -35,6 +37,7 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
         public ImageView temaIcon;
         public LinearLayout temaIconLayout;
         public LinearLayout temaLayout;
+
 
         public ViewHolder(View v) {
             super(v);
@@ -49,7 +52,11 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
         mDataset = myDataset;
     }
 
-    public TemaAdapter(List<Tema> myDataset,int color) {
+    public void setCapitulo(Capitulo capitulo) {
+        this.capitulo = capitulo;
+    }
+
+    public TemaAdapter(List<Tema> myDataset, int color) {
         mDataset = myDataset;
         mColor = color;
     }
@@ -73,9 +80,10 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
                 Intent intent = new Intent(view.getContext(),LeituraActivity.class);
                 intent.putExtra(LeituraActivity.TITLE,tema.getNome());
                 intent.putExtra(LeituraActivity.COLOR,mColor);
-                intent.putExtra(LeituraActivity.SUBTITLE,"Capítulo");
+                intent.putExtra(LeituraActivity.SUBTITLE,capitulo.getNome());
                 intent.putExtra(LeituraActivity.IMAGE_RESOURCE,tema.getIconeResource());
                 intent.putExtra(LeituraActivity.CONTENT,tema.getConteudo());
+                intent.putExtra(LeituraActivity.CHAPTER,capitulo.getNome());
                 view.getContext().startActivity(intent);
             }
         });
